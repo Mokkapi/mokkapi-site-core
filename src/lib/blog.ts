@@ -28,7 +28,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       const { data, content: markdownContent } = matter(content);
       
       // Convert markdown to HTML
-      const htmlContent = marked(markdownContent);
+      const htmlContent = marked.parse(markdownContent) as string;
       
       // Extract slug from filename
       const slug = path.replace('/src/content/blog/', '').replace('.md', '');
