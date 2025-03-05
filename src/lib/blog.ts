@@ -20,28 +20,32 @@ export async function getAllPosts(): Promise<BlogPost[]> {
   const posts: BlogPost[] = [];
   
   for (const path in modules) {
-    const moduleLoader = modules[path];
-    const content = await moduleLoader();
-    
-    // Parse frontmatter and markdown content
-    const { data, content: markdownContent } = matter(content);
-    
-    // Convert markdown to HTML
-    const htmlContent = marked(markdownContent);
-    
-    // Extract slug from filename
-    const slug = path.replace('/src/content/blog/', '').replace('.md', '');
-    
-    posts.push({
-      slug,
-      title: data.title || 'Untitled',
-      category: data.category || 'Uncategorized',
-      date: data.date ? new Date(data.date).toLocaleDateString() : 'Unknown date',
-      author: data.author || 'Anonymous',
-      authorImage: data.authorImage || '/placeholder.svg',
-      excerpt: data.excerpt || '',
-      content: htmlContent
-    });
+    try {
+      const moduleLoader = modules[path];
+      const content = await moduleLoader();
+      
+      // Parse frontmatter and markdown content
+      const { data, content: markdownContent } = matter(content);
+      
+      // Convert markdown to HTML
+      const htmlContent = marked(markdownContent);
+      
+      // Extract slug from filename
+      const slug = path.replace('/src/content/blog/', '').replace('.md', '');
+      
+      posts.push({
+        slug,
+        title: data.title || 'Untitled',
+        category: data.category || 'Uncategorized',
+        date: data.date ? new Date(data.date).toLocaleDateString() : 'Unknown date',
+        author: data.author || 'Anonymous',
+        authorImage: data.authorImage || '/placeholder.svg',
+        excerpt: data.excerpt || '',
+        content: htmlContent
+      });
+    } catch (error) {
+      console.error(`Error processing markdown file at ${path}:`, error);
+    }
   }
   
   // Sort posts by date (newest first)
