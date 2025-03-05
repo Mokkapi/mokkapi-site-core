@@ -1,0 +1,29 @@
+
+version: '3.8'
+
+services:
+  # Development service with hot-reloading
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  # Production-ready service
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
