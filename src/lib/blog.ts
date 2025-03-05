@@ -13,6 +13,41 @@ export interface BlogPost {
   content: string;
 }
 
+// Browser-compatible function to parse frontmatter
+function parseMarkdown(content: string) {
+  // Simple regex to extract frontmatter between --- markers
+  const frontMatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+  const match = content.match(frontMatterRegex);
+  
+  if (!match) {
+    return {
+      data: {},
+      content: content
+    };
+  }
+  
+  const frontMatterStr = match[1];
+  const contentStr = match[2];
+  
+  // Parse the frontmatter string into an object
+  const data: Record<string, any> = {};
+  const lines = frontMatterStr.split('\n');
+  
+  for (const line of lines) {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex !== -1) {
+      const key = line.slice(0, colonIndex).trim();
+      const value = line.slice(colonIndex + 1).trim();
+      data[key] = value;
+    }
+  }
+  
+  return {
+    data,
+    content: contentStr
+  };
+}
+
 // Get all blog posts with frontmatter and content
 export async function getAllPosts(): Promise<BlogPost[]> {
   // In a browser environment, we need to fetch the files
@@ -25,7 +60,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       const content = await moduleLoader();
       
       // Parse frontmatter and markdown content
-      const { data, content: markdownContent } = matter(content);
+      const { data, content: markdownContent } = parseMarkdown(content);
       
       // Convert markdown to HTML
       const htmlContent = marked.parse(markdownContent) as string;
