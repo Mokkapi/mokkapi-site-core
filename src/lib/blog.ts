@@ -16,12 +16,12 @@ export interface BlogPost {
 // Get all blog posts with frontmatter and content
 export async function getAllPosts(): Promise<BlogPost[]> {
   // In a browser environment, we need to fetch the files
-  const modules = import.meta.glob('/src/content/blog/*.md');
+  const modules = import.meta.glob('/src/content/blog/*.md', { as: 'raw' });
   const posts: BlogPost[] = [];
   
   for (const path in modules) {
-    const module = await modules[path]();
-    const content = module.default || '';
+    const moduleLoader = modules[path];
+    const content = await moduleLoader();
     
     // Parse frontmatter and markdown content
     const { data, content: markdownContent } = matter(content);
