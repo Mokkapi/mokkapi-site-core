@@ -64,12 +64,12 @@ const Navbar = () => {
             <User size={18} />
             <span>Sign In</span>
           </Button>
-          <Button 
+          {/*<Button 
             className="ml-2 bg-softBlue-500 hover:bg-softBlue-600 text-white hover:shadow-lg transition-all duration-300"
             size="sm"
           >
             Get Started
-          </Button>
+          </Button>*/}
         </div>
         
         {/* Mobile Menu Toggle */}
@@ -131,12 +131,12 @@ const Navbar = () => {
             >
               Sign In
             </Button>
-            <Button 
+            {/*<Button 
               className="w-full bg-softBlue-500 hover:bg-softBlue-600 text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get Started
-            </Button>
+            </Button>*/}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Shield, Zap, BarChart, Star } from 'lucide-react';
+import { ArrowRight, Users, Zap, Expand, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface FeatureCardProps {
@@ -8,9 +8,10 @@ interface FeatureCardProps {
   title: string;
   description: string;
   index: number;
+  target: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description, index }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description, target, index }) => {
   return (
     <div 
       className="relative rounded-xl overflow-hidden group"
@@ -26,7 +27,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
         
         <p className="text-charcoal-400 mb-4 flex-grow">{description}</p>
         
-        <a href="#" className="inline-flex items-center text-softBlue-500 hover:text-softBlue-700 transition-colors">
+        <a href={target} className="inline-flex items-center text-softBlue-500 hover:text-softBlue-700 transition-colors">
           <span>Learn more</span>
           <ArrowRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
         </a>
@@ -38,36 +39,40 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
 const FeatureSection = () => {
   const features = [
     {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level security keeps your data safe with advanced encryption and compliance practices."
+      icon: Users,
+      title: "Infinitely Scalable",
+      description: "Add as many users and endpoints as you desire, same low price.",
+      target: "/blog/scalability"
     },
     {
       icon: Zap,
       title: "Lightning Performance",
-      description: "Optimized for speed with best-in-class responsiveness, even under heavy workloads."
+      description: "Without a business logic layer, all database queries are a single lookup away.",
+      target: "/blog/performance"
     },
     {
-      icon: BarChart,
-      title: "Advanced Analytics",
-      description: "Turn raw data into actionable insights with powerful visualization tools."
+      icon: Expand,
+      title: "Extensible",
+      description: "Full source code access means you can expand on our core functionality in any way you desire.",
+      target: "/blog/extensible"
     },
     {
       icon: Star,
-      title: "Premium Experience",
-      description: "Thoughtfully designed with obsessive attention to detail for a premium user experience."
+      title: "Outcome, Not Usage Focused",
+      description: "Simple setup and usage, designed to be used for it's core functionality and then gets out of the way.",
+      target: "/blog/north-star"
     }
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-softBlue-50">
+    <section className="py-24 bg-gradient-to-b from-white to-softBlue-50" id="features">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-charcoal-500 mb-4">
-            Designed for modern workflows
+            Designed for modern development
           </h2>
           <p className="text-lg text-charcoal-400">
-            Our platform is built with the features your team needs to excel in today's fast-paced environment.
+            Mokkapi is built to make it easier to develop with APIs.
           </p>
         </div>
         
@@ -79,6 +84,7 @@ const FeatureSection = () => {
               title={feature.title}
               description={feature.description}
               index={index}
+              target={feature.target}
             />
           ))}
         </div>

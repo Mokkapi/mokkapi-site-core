@@ -62,7 +62,7 @@ const Support = () => {
         </div>
         
         <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-md">
-          <h2 className="text-2xl font-semibold text-charcoal-500 mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-semibold text-charcoal-500 mb-6" id="FAQ">Frequently Asked Questions</h2>
           
           <div className="space-y-6">
             {[

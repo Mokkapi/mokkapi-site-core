@@ -40,9 +40,9 @@ const Footer = () => {
       title: "Product",
       links: [
         { label: "Features", href: "#" },
-        { label: "Pricing", href: "#" },
-        { label: "Integrations", href: "#" },
-        { label: "Changelog", href: "#" }
+        { label: "Pricing", href: "/pricing" },
+        { label: "Libraries", href: "#" },
+        { label: "FAQ", href: "/support#FAQ" }
       ]
     },
     {
@@ -50,7 +50,6 @@ const Footer = () => {
       links: [
         { label: "About", href: "/about" },
         { label: "Blog", href: "/blog" },
-        { label: "Careers", href: "#" },
         { label: "Contact", href: "#" }
       ]
     },
@@ -59,8 +58,7 @@ const Footer = () => {
       links: [
         { label: "Documentation", href: "#" },
         { label: "Support", href: "/support" },
-        { label: "Tutorials", href: "#" },
-        { label: "Webinars", href: "#" }
+        { label: "Use cases", href: "#" }
       ]
     },
     {
@@ -82,7 +80,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Logo className="mb-4" />
             <p className="text-charcoal-400 mb-6 max-w-sm">
-              Elevating businesses with powerful, thoughtfully designed software solutions that prioritize user experience.
+              Simple, thoughtfully designed software solutions.
             </p>
             
             {/* Social links */}
@@ -112,7 +110,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-charcoal-400 text-sm">
-            &copy; {currentYear} {'{M}'} space. All rights reserved.
+            &copy; {currentYear} Mokkapi. All rights reserved.
           </p>
           
           <div className="flex gap-6">

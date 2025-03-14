@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { Github, FlaskConical } from 'lucide-react';
 
 const CTASection = () => {
   return (
@@ -19,14 +19,13 @@ const CTASection = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-softBlue-50 opacity-70"></div>
           
           {/* Content */}
-          <div className="relative z-10">
+          <div className="relative cta z-10">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal-500 mb-4">
-                Ready to transform your workflow?
+                Ready to build the simplest backend you'll ever need?
               </h2>
               <p className="text-lg text-charcoal-400 max-w-2xl mx-auto">
-                Join thousands of teams that have already made the switch to the most intuitive 
-                software platform on the market.
+                Try out our demo instance or grab your own copy on Github.
               </p>
             </div>
             
@@ -34,20 +33,22 @@ const CTASection = () => {
               <Button 
                 className="bg-softBlue-500 hover:bg-softBlue-600 text-white text-lg py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
               >
-                Start Free Trial
+                <FlaskConical className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                Go to Demo Site
               </Button>
               
               <Button 
                 variant="outline" 
                 className="text-lg py-6 px-8 rounded-lg border-charcoal-200 hover:border-charcoal-300 group"
               >
-                <span>Schedule Demo</span>
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Github className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <span>Go to Github page</span>
+                
               </Button>
             </div>
             
             <p className="text-center text-charcoal-400 text-sm mt-6">
-              No credit card required. 14-day free trial.
+              No fixed trial period. 
             </p>
           </div>
         </div>

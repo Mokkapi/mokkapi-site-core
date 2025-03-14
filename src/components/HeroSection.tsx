@@ -59,35 +59,36 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal-500 mb-6 leading-tight">
-            <span className="block opacity-0 animate-slideUp">Modern Solutions for</span>
-            <span className="block opacity-0 animate-slideUp animation-delay-100">Modern Problems</span>
+            <span className="block opacity-0 animate-slideUp">Simple Backend Mocking</span>
+            <span className="block opacity-0 animate-slideUp animation-delay-100">For Rapid Development</span>
           </h1>
           
           <p className="text-lg md:text-xl text-charcoal-400 mb-8 max-w-2xl mx-auto opacity-0 animate-slideUp animation-delay-200">
-            Powerful, intuitive software built for businesses that want to move faster, 
-            scale smarter, and lead the future of innovation.
+            Simple, intuitive software tool that lets developers mock endpoints and return any JSON they desire.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-slideUp animation-delay-300">
-            <Button className="bg-softBlue-500 hover:bg-softBlue-600 text-white px-6 py-6 text-lg rounded-lg hover:translate-y-[-2px] transition-all duration-300">
+            {/*<Button className="bg-softBlue-500 hover:bg-softBlue-600 text-white px-6 py-6 text-lg rounded-lg hover:translate-y-[-2px] transition-all duration-300">
               Get Started
             </Button>
-            
-            <Button variant="outline" className="group px-6 py-6 text-lg rounded-lg border-charcoal-300">
+            */}
+            <a href="#features">
+            <Button variant="outline" className="group px-6 py-6 text-lg rounded-lg bg-softBlue-500 text-white">
               <span>Learn More</span>
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
+            </a>
           </div>
-          
+          {/* placeholder for company logos
           <div className="mt-16 opacity-0 animate-fadeIn animation-delay-500">
             <p className="text-sm text-charcoal-400 mb-4">Trusted by industry leaders</p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {/* Placeholders for company logos */}
               {[1, 2, 3, 4, 5].map((i) => (
                 <div key={i} className="h-8 w-24 bg-charcoal-100/50 rounded-md"></div>
               ))}
             </div>
           </div>
+           */}
         </div>
       </div>
     </section>
