@@ -9,7 +9,6 @@ interface BlogCardProps {
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="h-48 bg-softBlue-100"></div>
       <div className="p-6">
         <p className="text-softBlue-500 text-sm mb-2">{post.category} • {post.date}</p>
         <h3 className="text-xl font-semibold text-charcoal-500 mb-2">

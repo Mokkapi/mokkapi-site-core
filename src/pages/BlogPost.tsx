@@ -25,22 +25,19 @@ const BlogPostPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen">
-        <Navbar />
+      <>
         <main className="container mx-auto px-4 py-32">
           <div className="max-w-3xl mx-auto">
             <p className="text-center">Loading...</p>
           </div>
         </main>
-        <Footer />
-      </div>
+      </>
     );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen">
-        <Navbar />
+      <>
         <main className="container mx-auto px-4 py-32">
           <div className="max-w-3xl mx-auto">
             <p className="text-center">Post not found</p>
@@ -52,14 +49,11 @@ const BlogPostPage = () => {
             </div>
           </div>
         </main>
-        <Footer />
-      </div>
+      </>
     );
   }
-
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <>
       <main className="container mx-auto px-4 py-32">
         <article className="max-w-3xl mx-auto">
           <Link to="/blog" className="inline-flex items-center text-softBlue-500 hover:text-softBlue-600 mb-8">
@@ -86,8 +80,7 @@ const BlogPostPage = () => {
           />
         </article>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 };
 

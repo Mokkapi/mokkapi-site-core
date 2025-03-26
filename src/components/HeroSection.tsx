@@ -59,12 +59,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal-500 mb-6 leading-tight">
-            <span className="block opacity-0 animate-slideUp">Simple Backend Mocking</span>
+            <span className="block opacity-0 animate-slideUp">Schema-less Backend </span>
             <span className="block opacity-0 animate-slideUp animation-delay-100">For Rapid Development</span>
           </h1>
           
           <p className="text-lg md:text-xl text-charcoal-400 mb-8 max-w-2xl mx-auto opacity-0 animate-slideUp animation-delay-200">
-            Simple, intuitive software tool that lets developers mock endpoints and return any JSON they desire.
+            Simple, intuitive software tool that lets you mock API endpoints and return any JSON you want.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-slideUp animation-delay-300">

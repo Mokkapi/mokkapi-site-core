@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Button } from '@/components/ui/button';
-import { User, MessageSquare, BookOpen, Menu, X, Home } from 'lucide-react';
+import { User, MessageSquare, BookOpen, Menu, X, Home, CircleDollarSign } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NavItem = ({ children, href, icon: Icon }: { children: React.ReactNode; href: string; icon: React.ElementType }) => {
@@ -53,6 +53,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <NavItem href="/" icon={Home}>Home</NavItem>
+          <NavItem href="/pricing" icon={CircleDollarSign}>Pricing</NavItem>
           <NavItem href="/blog" icon={BookOpen}>Blog</NavItem>
           <NavItem href="/support" icon={MessageSquare}>Support</NavItem>
           <NavItem href="/about" icon={BookOpen}>About</NavItem>
@@ -96,6 +97,14 @@ const Navbar = () => {
             >
               <Home size={20} />
               <span>Home</span>
+            </a>
+            <a 
+              href="/pricing" 
+              className="flex items-center gap-2 hover:text-softBlue-300 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Home size={20} />
+              <span>Pricing</span>
             </a>
             <a 
               href="/blog" 

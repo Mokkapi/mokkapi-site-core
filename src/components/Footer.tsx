@@ -39,9 +39,7 @@ const Footer = () => {
     {
       title: "Product",
       links: [
-        { label: "Features", href: "#" },
         { label: "Pricing", href: "/pricing" },
-        { label: "Libraries", href: "#" },
         { label: "FAQ", href: "/support#FAQ" }
       ]
     },
@@ -50,7 +48,6 @@ const Footer = () => {
       links: [
         { label: "About", href: "/about" },
         { label: "Blog", href: "/blog" },
-        { label: "Contact", href: "#" }
       ]
     },
     {
@@ -58,16 +55,6 @@ const Footer = () => {
       links: [
         { label: "Documentation", href: "#" },
         { label: "Support", href: "/support" },
-        { label: "Use cases", href: "#" }
-      ]
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-        { label: "Security", href: "#" },
-        { label: "Compliance", href: "#" }
       ]
     }
   ];

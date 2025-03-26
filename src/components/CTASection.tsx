@@ -31,19 +31,24 @@ const CTASection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
+                asChild
                 className="bg-softBlue-500 hover:bg-softBlue-600 text-white text-lg py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
               >
+                <a href="https://demo.mokkapi.com">
                 <FlaskConical className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 Go to Demo Site
+                </a>
               </Button>
               
               <Button 
+                asChild
                 variant="outline" 
                 className="text-lg py-6 px-8 rounded-lg border-charcoal-200 hover:border-charcoal-300 group"
               >
+                <a href="https://github.com/Mokkapi/mokkapi">
                 <Github className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 <span>Go to Github page</span>
-                
+                </a>
               </Button>
             </div>
             

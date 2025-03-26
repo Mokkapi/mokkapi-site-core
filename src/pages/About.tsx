@@ -28,7 +28,10 @@ const About = () => {
                 <div className="p-8 md:w-1/2">
                   <h2 className="text-2xl font-semibold text-charcoal-500 mb-4">Our Tool</h2>
                   <p className="text-charcoal-400 mb-4">
-                    We stripped out the business logic of a backend application. The tool literally serves the stored JSON without processing. This makes it easier to develop against an agreed upon, or not yet existing API. Tweak the API, add variations, add extra fields, etc. Similarly, create a local copy of common third party API endpoints you want to include in your test suite. See our use cases for more.
+                    We stripped out the business logic of a backend application. The tool literally serves the stored JSON without processing. This makes it easier to develop against an existing, agreed upon, or not yet existing API. 
+                  </p>
+                  <p className="text-charcoal-400 mb-4">
+                  Tweak the API, add variations, add extra fields, etc. Similarly, create a local copy of common third party API endpoints you want to include in your test suite. See our use cases for more.
                   </p>
                   <p className="text-charcoal-400">
                     While we intend to grow the functionality of the tool, we want to keep certain things constant: the price you pay will never increase, and as a paying user you should own and be able to use a copy you purchased forever.

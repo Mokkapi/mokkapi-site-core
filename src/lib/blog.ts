@@ -16,7 +16,7 @@ export interface BlogPost {
 // Browser-compatible function to parse frontmatter
 function parseMarkdown(content: string) {
   // Simple regex to extract frontmatter between --- markers
-  const frontMatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+  const frontMatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
   const match = content.match(frontMatterRegex);
   
   if (!match) {
@@ -68,8 +68,8 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       // Extract slug from filename
       const slug = path.replace('/src/content/blog/', '').replace('.md', '');
       
-      posts.push({
-        slug,
+      const blogData = {
+        slug: slug,
         title: data.title || 'Untitled',
         category: data.category || 'Uncategorized',
         date: data.date ? new Date(data.date).toLocaleDateString() : 'Unknown date',
@@ -77,7 +77,8 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         authorImage: data.authorImage || '/placeholder.svg',
         excerpt: data.excerpt || '',
         content: htmlContent
-      });
+      };
+      posts.push(blogData);
     } catch (error) {
       console.error(`Error processing markdown file at ${path}:`, error);
     }

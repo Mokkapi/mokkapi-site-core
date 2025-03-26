@@ -21,8 +21,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <> 
       <main className="container mx-auto px-4 py-32">
         <h1 className="text-4xl font-bold text-charcoal-500 mb-8 text-center">Blog</h1>
         <p className="text-xl text-charcoal-400 text-center mb-16">
@@ -49,8 +48,7 @@ const Blog = () => {
           </div>
         )}
       </main>
-      <Footer />
-    </div>
+    </>
   );
 };
 
